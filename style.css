@@ -22,7 +22,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: var(--text-color-dark-bg); /* Texto principal blanco, ya que el fondo del body es claro */
+    color: var(--text-color-dark-bg);
     background-color: var(--light-background);
     display: flex; /* Para el layout del sidebar y el contenido principal */
     min-height: 100vh;
@@ -36,15 +36,15 @@ body {
 /* Sidebar (Menú Lateral Izquierdo) */
 .sidebar {
     width: 250px;
-    background-color: var(--primary-color); /* Fondo negro */
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 30px 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    position: fixed; /* Fijo para que no se desplace con el scroll */
+    position: fixed;
     height: 100%;
-    overflow-y: auto; /* Permite scroll si el contenido es largo */
+    overflow-y: auto;
 }
 
 .sidebar .logo {
@@ -54,8 +54,8 @@ body {
 
 .sidebar .logo h1 {
     font-size: 1.8em;
-    color: var(--secondary-color) !important; /* Rojo para el logo del sidebar */
-    border-bottom: 2px solid var(--secondary-color); /* Borde rojo */
+    color: var(--secondary-color) !important;
+    border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 10px;
     display: inline-block;
 }
@@ -69,7 +69,7 @@ body {
 }
 
 .sidebar .main-nav ul li a {
-    color: var(--white); /* Enlaces del sidebar blancos */
+    color: var(--white);
     text-decoration: none;
     font-size: 1.1em;
     padding: 10px 15px;
@@ -80,88 +80,89 @@ body {
 
 .sidebar .main-nav ul li a:hover,
 .sidebar .main-nav ul li a.active {
-    background-color: var(--secondary-color); /* Fondo rojo al pasar el ratón o activo */
+    background-color: var(--secondary-color);
     color: var(--white);
 }
 
 /* Contenido Principal (el área a la derecha del sidebar) */
 .content {
-    margin-left: 250px; /* Deja espacio para el sidebar fijo */
-    flex-grow: 1; /* Para que ocupe el resto del espacio */
+    margin-left: 250px;
+    flex-grow: 1;
     padding: 30px;
-    background-color: var(--dark-background); /* Fondo oscuro para el contenido principal */
+    background-color: var(--dark-background);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-    margin: 20px 20px 20px 270px; /* Ajuste final de margen para el contenido */
-    color: var(--white); /* Texto blanco para el contenido principal */
+    margin: 20px 20px 20px 270px;
+    color: var(--white);
 }
 
 section {
     margin-bottom: 40px;
     padding: 20px;
-    background-color: var(--primary-color); /* Fondo negro para las secciones */
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    color: var(--white); /* Texto blanco para las secciones */
+    color: var(--white);
 }
 
 section h2 {
-    color: var(--secondary-color); /* Títulos de sección rojos */
+    color: var(--secondary-color);
     font-size: 2em;
     margin-bottom: 15px;
-    border-bottom: 2px solid var(--primary-color); /* Borde negro */
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
+    display: inline-block;
 }
 
 section p {
     margin-bottom: 15px;
     line-height: 1.8;
-    color: var(--white); /* Texto blanco para párrafos */
+    color: var(--white);
 }
 
 /* --- Sección de Inicio: Diseño de Dos Columnas --- */
 .home-section {
     padding: 30px;
-    background-color: var(--primary-color); /* Fondo negro */
+    background-color: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: var(--border-radius);
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    /* QUITADO: display: flex; justify-content: center; align-items: flex-start; */
+    /* Estas propiedades están en .home-main-content que es el que ahora debe controlar el layout */
 }
 
 .home-main-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    display: block; /* IMPORTANTE: Cambiado a block para apilar paneles verticalmente */
+    /* QUITADO: flex-wrap: wrap; gap: 40px; align-items: center; justify-content: center; */
+    max-width: 1200px; /* Mantiene un ancho máximo para el contenido */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centra el bloque .home-main-content dentro de .home-section */
+    padding: 0; /* Asegura que no haya padding extra aquí */
 }
 
 .left-home-panel {
-    flex: 1;
-    min-width: 300px;
+    width: 100%; /* Ocupa el 100% del ancho de .home-main-content */
+    min-width: unset; /* Elimina la restricción de ancho mínimo */
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    margin-bottom: 30px; /* Espacio entre el panel izquierdo y el derecho */
 }
 
 .right-home-content {
-    flex: 2;
-    min-width: 350px;
+    width: 100%; /* Ocupa el 100% del ancho de .home-main-content */
+    min-width: unset; /* Elimina la restricción de ancho mínimo */
     padding: 20px;
     box-sizing: border-box;
     text-align: left;
+    margin-bottom: 30px; /* Espacio entre el panel derecho y la siguiente sección */
 }
 
 .right-home-content h2 {
-    color: var(--secondary-color); /* Título rojo */
+    color: var(--secondary-color);
     font-size: 2.5em;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--primary-color); /* Borde negro */
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     display: inline-block;
 }
@@ -169,7 +170,7 @@ section p {
 .right-home-content p {
     font-size: 1.1em;
     margin-bottom: 20px;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 .right-home-content img {
@@ -183,47 +184,46 @@ section p {
 
 /* --- BARRA DE PROGRESO VERTICAL --- */
 .vertical-progress-container {
-    width: 1cm; /* Ancho de la barra */
-    height: 5cm; /* Altura de la barra */
-    background-color: #555; /* Color del fondo de la barra vacía (gris oscuro) */
+    width: 1cm;
+    height: 5cm;
+    background-color: #555;
     border-radius: 5px;
-    overflow: hidden; /* Para que el llenado se recorte */
+    overflow: hidden;
     margin: 20px auto;
     position: relative;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    display: flex; /* Añadido para centrar el contenido */
-    align-items: flex-end; /* Alinea los ítems al final (abajo) */
-    justify-content: center; /* Centra horizontalmente */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .vertical-progress-fill {
-    position: absolute; /* Sigue siendo absoluto para cubrir el fondo */
-    bottom: 0; /* Empieza desde abajo */
+    position: absolute;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 0%; /* Altura inicial del llenado */
-    background-color: var(--secondary-color); /* Color de llenado (rojo) */
-    transition: height 0.5s ease-out; /* Transición suave de la altura */
+    height: 0%;
+    background-color: var(--secondary-color);
+    transition: height 0.5s ease-out;
     border-radius: 5px;
 }
 
 .progress-text {
-    position: absolute; /* Se mantiene absoluto para posicionarlo libremente */
-    top: 50%; /* Centrado verticalmente */
-    left: 50%; /* Centrado horizontalmente */
-    transform: translate(-50%, -50%); /* Ajuste fino para centrado exacto */
-    color: var(--white); /* Texto del porcentaje BLANCO para contraste */
-    font-size: 0.8em; /* Tamaño de fuente ligeramente más pequeño para caber en 1cm */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 0.8em;
     font-weight: bold;
-    white-space: nowrap; /* Evita que el texto se rompa */
-    z-index: 10; /* Asegura que esté por encima de la barra de llenado */
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8); /* Sombra para mejor legibilidad */
+    white-space: nowrap;
+    z-index: 10;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
-
 
 /* Botón de compra (horizontal) */
 .buy-tickets-button {
-    background-color: var(--secondary-color); /* Botón rojo */
+    background-color: var(--secondary-color);
     color: var(--white);
     border: none;
     padding: 18px 40px;
@@ -239,7 +239,7 @@ section p {
 }
 
 .buy-tickets-button:hover {
-    background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+    background-color: #c0392b;
     transform: translateY(-3px);
 }
 
@@ -252,7 +252,7 @@ section p {
 .advertencia-sorteo {
     font-size: 1.2em;
     font-weight: bold;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -262,7 +262,7 @@ section p {
     list-style: none;
     padding: 0;
     text-align: center;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
     font-size: 1.1em;
     line-height: 1.6;
 }
@@ -280,14 +280,14 @@ section p {
 }
 
 .prize-item {
-    background-color: var(--dark-background); /* Fondo oscuro para los ítems de premio */
-    border: 1px solid var(--primary-color); /* Borde negro */
+    background-color: var(--dark-background);
+    border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 .prize-item:hover {
@@ -308,14 +308,14 @@ section p {
 }
 
 .prize-item h3 {
-    color: var(--secondary-color); /* Títulos de premio rojos */
+    color: var(--secondary-color);
     font-size: 1.4em;
     margin-bottom: 10px;
 }
 
 .prize-item p {
     font-size: 0.95em;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 /* Secciones de Información General (Cómo Participar, Contactos, FAQ) */
@@ -323,13 +323,13 @@ section p {
 .info-section ul {
     margin-left: 20px;
     margin-bottom: 20px;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 .info-section ol li,
 .info-section ul li {
     margin-bottom: 10px;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 .contact-form {
@@ -342,19 +342,19 @@ section p {
 
 .contact-form label {
     font-weight: bold;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
     padding: 12px;
-    border: 1px solid var(--primary-color); /* Borde negro */
+    border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     font-size: 1em;
     width: 100%;
-    background-color: var(--white); /* Fondo del input blanco para contraste */
-    color: var(--text-color-light-bg); /* Texto del input negro */
+    background-color: var(--white);
+    color: var(--text-color-light-bg);
 }
 
 .contact-form textarea {
@@ -362,7 +362,7 @@ section p {
 }
 
 .contact-form .submit-button {
-    background-color: var(--secondary-color); /* Botón rojo */
+    background-color: var(--secondary-color);
     color: var(--white);
     border: none;
     padding: 12px 25px;
@@ -373,33 +373,33 @@ section p {
 }
 
 .contact-form .submit-button:hover {
-    background-color: #c0392b; /* Rojo más oscuro */
+    background-color: #c0392b;
 }
 
 .faq-item {
-    background-color: var(--dark-background); /* Fondo oscuro para FAQ item */
-    border-left: 5px solid var(--secondary-color); /* Borde rojo */
+    background-color: var(--dark-background);
+    border-left: 5px solid var(--secondary-color);
     padding: 15px 20px;
     margin-bottom: 15px;
     border-radius: var(--border-radius);
 }
 
 .faq-item h3 {
-    color: var(--secondary-color); /* Títulos FAQ rojos */
+    color: var(--secondary-color);
     font-size: 1.2em;
     margin-bottom: 5px;
 }
 
 .faq-item p {
     font-size: 0.9em;
-    color: var(--white); /* Texto blanco */
+    color: var(--white);
 }
 
 /* Pie de Página */
 footer {
-    width: calc(100% - 250px); /* Ajusta el ancho para el sidebar */
-    margin-left: 250px; /* Alinea con el contenido principal */
-    background-color: var(--primary-color); /* Fondo negro */
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
     padding: 20px 0;
@@ -427,7 +427,7 @@ footer {
 }
 
 .social-links a:hover {
-    color: var(--secondary-color); /* Rojo al pasar el ratón */
+    color: var(--secondary-color);
 }
 
 /* --- Media Queries para Responsividad --- */
@@ -485,7 +485,7 @@ footer {
 
     .sidebar .logo h1 {
         font-size: 1.8em;
-        color: var(--secondary-color) !important; /* Rojo en móvil para contraste */
+        color: var(--secondary-color) !important;
         border-bottom: 2px solid var(--secondary-color);
         padding-bottom: 10px;
         display: inline-block;
@@ -513,9 +513,13 @@ footer {
         padding: 20px;
     }
 
+    /* En pantallas pequeñas, el home-main-content ya estaba en columna, lo mantenemos */
     .home-main-content {
-        flex-direction: column;
+        flex-direction: column; 
         gap: 20px;
+        display: flex; /* Aseguramos que siga siendo flex para flex-direction: column */
+        align-items: center; /* Para centrar el contenido en columna */
+        justify-content: center;
     }
 
     .left-home-panel, .right-home-content {
@@ -545,48 +549,48 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    /* ... tus estilos responsivos ... */
+/* -------------------------------------------------------------------------- */
+/* --- NUEVOS ESTILOS AÑADIDOS AQUI ABAJO (revisados) --- */
+/* -------------------------------------------------------------------------- */
+
+/* Estilos para el texto antes de la barra de progreso */
+.text-before-progress {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-/* ... tu CSS existente ... */
-
-/* -------------------------------------------------------------------------- */
-/* --- AJUSTES EN ESTILOS AÑADIDOS --- */
-/* -------------------------------------------------------------------------- */
+.text-before-progress-small {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 /* Estilos para el recuadro llamativo antes de la barra de progreso */
 .callout-box {
-    background-color: var(--white); /* Fondo blanco */
-    color: var(--text-color-light-bg); /* Texto negro (para contraste con el fondo blanco) */
-    padding: 15px 20px; /* Espacio interior (arriba, abajo, izquierda, derecha) */
-    border-radius: var(--border-radius); /* Bordes redondeados (usando tu variable existente) */
-    margin-bottom: 20px; /* Espacio debajo del recuadro (antes de la barra) */
-    text-align: center; /* Centrar el texto dentro del recuadro */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
-
-    /* >>>>>>>>> NUEVAS PROPIEDADES AÑADIDAS/MODIFICADAS AQUÍ <<<<<<<<< */
-    max-width: 350px; /* O el ancho máximo que quieras para el recuadro */
-    margin-left: auto; /* Centrar el bloque horizontalmente */
-    margin-right: auto; /* Centrar el bloque horizontalmente */
-    /* Puedes combinar las dos líneas de margin en una: margin: 0 auto 20px auto; */
+    background-color: var(--white);
+    color: var(--text-color-light-bg);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Ancho máximo para el recuadro */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Podemos ajustar un poco los estilos del texto dentro del recuadro si es necesario */
+/* Ajustes para el texto dentro del recuadro blanco */
 .callout-box .text-before-progress {
-    color: var(--text-color-light-bg); /* Aseguramos que el texto sea negro dentro del recuadro blanco */
-    font-weight: bold; /* Mantener el texto principal en negrita */
-    margin-bottom: 5px; /* Reducir un poco el margen entre los párrafos dentro del recuadro */
+    color: var(--text-color-light-bg);
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .callout-box .text-before-progress-small {
-    color: rgba(0, 0, 0, 0.6); /* Un gris oscuro para el texto más pequeño */
-    margin-bottom: 0; /* Eliminar el margen inferior del segundo párrafo dentro del recuadro */
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
 }
-
-/* Posiblemente también ajustar el padding del left-home-panel si el recuadro se ve muy pegado a los bordes */
-/*
-.left-home-panel {
-    padding: 20px 10px; // Ejemplo: reducir padding horizontal si el panel es demasiado ancho
-}
-*/
