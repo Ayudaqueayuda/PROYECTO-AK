@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO AK - Sorteo Solidario</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>PROYECTO AK</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#premios">Premios</a></li>
+                    <li><a href="#como-participar">Cómo Participar</a></li>
+                    <li><a href="#contactos">Contáctanos</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="inicio" class="home-section">
+                <div class="home-main-content">
+                    <div class="left-home-panel">
+                        <div class="vertical-progress-container">
+                            <div class="vertical-progress-fill"></div>
+                            <span class="progress-text">0%</span>
+                        </div>
+
+                        <p class="advertencia-sorteo">
+                            ¡El sorteo se realizará una vez alcanzado el <strong>100% de los boletos vendidos</strong>!
+                        </p>
+
+                        <button id="buyButton" class="buy-tickets-button">Comprar Boletos</button>
+
+                        <p style="text-align: center; margin: 15px 0; color: #ffffff;">
+                            ¡Cuenta regresiva! Con el 100% completado, <strong>Revelaremos a los ganadores</strong>
+                        </p>
+                        <ul class="call-to-action-list">
+                            <li>Por tan solo $1,00 (venta mínima 3 boletos)</li>
+                            <li>No te quedes sin tu oportunidad de ganar 🏆</li>
+                        </ul>
+                    </div>
+                    <div class="right-home-content">
+                        <h2>Bienvenido a "PROYECTO AK"</h2>
+                        <p>Participa en el mejor sorteo, y aprovecha para ganar premios inigualables.</p>
+                        <div class="prizes-grid">
+                            <div class="prize-item">
+                                <img src="assets/aakk.jpg" alt="portada del sorteo">
+                                <p>No dejes que la duda te persiga. ¡Actúa ahora, asegura tu premio y evita el arrepentimiento! ¿Celebrarás o lamentarás?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="premios" class="prizes-section">
+                <h2>Nuestros Increíbles Premios</h2>
+                <p>Descubre lo que podrías ganar al participar en nuestro sorteo.</p>
+                <div class="prizes-grid">
+                    <div class="prize-item">
+                        <img src="assets/celuu.jpg" alt="Celular marca Iphone, de paquete, color brillante.">
+                        <h3>Iphone 15 </h3>
+                        <p>¡Un iPhone 15 puede ser tuyo!
+                         </div>¡Imagina tener en tus manos el último iPhone 15! Este increíble smartphone no es solo un teléfono, es una puerta a un mundo de posibilidades. Con su diseño elegante y resistente, el iPhone 15 te ofrece una experiencia visual inmersiva en su pantalla Super Retina XDR. Tus fotos y videos cobrarán vida con detalles asombrosos.</p>
+                    <div class="prize-item">
+                        <img src="assets/billetito.jpg" alt="Billetes de veinte USD">
+                        <h3>Gana Dinero</h3>
+                        <p>¡Gana $200 en efectivo!
+¿Necesitas un impulso extra? ¡Participa y podrías ganar $200 en efectivo! Este dinero es tuyo para lo que quieras: date un gusto, cubre un gasto inesperado o ahorra para algo especial. ¡No dejes pasar esta oportunidad de darle un respiro a tu bolsillo!
+¡Mucha suerte!</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="como-participar" class="info-section">
+                <h2>Cómo Participar</h2>
+                <p>Participar en el sorteo "PROYECTO AK" es muy sencillo:</p>
+                <ol>
+                    <li>Haz clic en el botón "Comprar Boletos" que encontrarás en la sección de Inicio.</li>
+                    <li>Se abrirá una conversación de WhatsApp con nuestro equipo de "PROYECTO AK".</li>
+                    <li>Indícanos la cantidad de boletos que deseas adquirir y con gusto te proporcionaremos los detalles para el pago seguro.</li>
+                    <li>Una vez confirmado el pago, recibirás tus boletos digitales. Los números serán asignados aleatoriamente,</li>
+                </ol>
+                <p>¡Tu participación es la clave para seguir ayudando a quienes más lo necesitan!</p>
+            </section>
+
+            <section id="contactos" class="info-section">
+                <h2>Contáctanos</h2>
+                <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos:</p>
+                <ul>
+                    <li>Correo Electrónico: alexis24112000@hotmail.com</li>
+                    <li>Teléfono: +593 968 422 685 </li>
+                </ul>
+                <form class="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </section>
+
+            <section id="faq" class="info-section">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Cómo se realiza el sorteo?</h3>
+                    <p>El sorteo se realizará de forma transparente en la fecha anunciada, utilizando un sistema aleatorio y en vivo a través de nuestras redes sociales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cuándo se anunciarán los ganadores?</h3>
+                    <p>Los ganadores se anunciarán el mismo día del sorteo en nuestro sitio web y redes sociales. También se les contactará directamente.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Son seguros mis datos al comprar boletos?</h3>
+                    <p>Sí, la seguridad de tus datos es nuestra prioridad. Utilizamos plataformas de pago seguras y protegemos tu información personal.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 PROYECTO AK. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://facebook.com/ayudaqueayuda" target="_blank" aria-label="Facebook">Facebook</a>
+                <a href="https://instagram.com/ayudaqueayuda" target="_blank" aria-label="Instagram">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Define el porcentaje inicial de la barra aquí.
+    let currentPercentage = 40;
+
+    // Función principal para actualizar el progreso vertical
+    function actualizarProgresoVertical(porcentaje) {
+        const progressText = document.querySelector('.vertical-progress-container .progress-text');
+        const progressFill = document.querySelector('.vertical-progress-fill');
+        
+        if (!progressText || !progressFill) {
+            console.error("Elementos de la barra de progreso vertical no encontrados.");
+            return;
+        }
+
+        // Aseguramos que el porcentaje esté entre 0 y 100
+        porcentaje = Math.max(0, Math.min(100, porcentaje));
+        progressText.textContent = `${Math.round(porcentaje)}%`;
+
+        // La altura del llenado es directamente el porcentaje
+        progressFill.style.height = `${porcentaje}%`;
+    }
+
+    // Función para actualizar la barra de progreso con el porcentaje actual
+    function updateProgressBarDisplay() {
+        actualizarProgresoVertical(currentPercentage);
+    }
+
+    // Llama a la función de actualización inicial inmediatamente después de su definición
+    updateProgressBarDisplay(); 
+
+    // El resto del script se ejecuta cuando el DOM está completamente cargado
+    document.addEventListener('DOMContentLoaded', () => {
+        const buyButton = document.getElementById('buyButton');
+
+        // Funcionalidad del botón de compra (WhatsApp)
+        if (buyButton) {
+            buyButton.addEventListener('click', () => {
+                const whatsappNumber = '593968422685'; 
+                const message = encodeURIComponent('¡Hola! Me gustaría comprar boletos para el sorteo PROYECTO AK. ¿Me puedes dar más información, por favor?');
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        } else {
+            console.warn("El botón de compra con ID 'buyButton' no fue encontrado.");
+        }
+
+        // Para la navegación suave al hacer clic en los enlaces del menú
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Esta función se hace global para que puedas llamarla desde la consola del navegador
+        // Ejemplo: setTicketsPercentage(75);
+        window.setTicketsPercentage = function(percentage) {
+            if (percentage >= 0 && percentage <= 100) {
+                currentPercentage = percentage; // Actualiza la variable global
+                updateProgressBarDisplay(); // Llama a la función de actualización
+                console.log(`Barra actualizada a ${percentage}%`);
+            } else {
+                console.warn("El porcentaje debe estar entre 0 y 100.");
+            }
+        };
+    });
+    </script>
+</body>
+</html>

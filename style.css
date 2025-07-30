@@ -1,0 +1,546 @@
+/* style.css */
+
+:root {
+    --primary-color: #000000; /* Antes azul, ahora NEGRO */
+    --secondary-color: #e74c3c; /* Antes verde, ahora ROJO */
+    --dark-background: #2c3e50; /* Fondo oscuro, puedes ajustarlo si lo deseas */
+    --light-background: #ecf0f1; /* Fondo claro para secciones */
+    --text-color-dark-bg: #ffffff; /* Texto blanco para fondos oscuros */
+    --text-color-light-bg: #000000; /* Texto negro para fondos claros, ajustado para ser legible si el fondo del elemento no es blanco */
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark-bg); /* Texto principal blanco, ya que el fondo del body es claro */
+    background-color: var(--light-background);
+    display: flex; /* Para el layout del sidebar y el contenido principal */
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar (Menú Lateral Izquierdo) */
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color); /* Fondo negro */
+    color: var(--white);
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Fijo para que no se desplace con el scroll */
+    height: 100%;
+    overflow-y: auto; /* Permite scroll si el contenido es largo */
+}
+
+.sidebar .logo {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.sidebar .logo h1 {
+    font-size: 1.8em;
+    color: var(--secondary-color) !important; /* Rojo para el logo del sidebar */
+    border-bottom: 2px solid var(--secondary-color); /* Borde rojo */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.sidebar .main-nav ul {
+    list-style: none;
+}
+
+.sidebar .main-nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar .main-nav ul li a {
+    color: var(--white); /* Enlaces del sidebar blancos */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    display: block;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .main-nav ul li a:hover,
+.sidebar .main-nav ul li a.active {
+    background-color: var(--secondary-color); /* Fondo rojo al pasar el ratón o activo */
+    color: var(--white);
+}
+
+/* Contenido Principal (el área a la derecha del sidebar) */
+.content {
+    margin-left: 250px; /* Deja espacio para el sidebar fijo */
+    flex-grow: 1; /* Para que ocupe el resto del espacio */
+    padding: 30px;
+    background-color: var(--dark-background); /* Fondo oscuro para el contenido principal */
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin: 20px 20px 20px 270px; /* Ajuste final de margen para el contenido */
+    color: var(--white); /* Texto blanco para el contenido principal */
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--primary-color); /* Fondo negro para las secciones */
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: var(--white); /* Texto blanco para las secciones */
+}
+
+section h2 {
+    color: var(--secondary-color); /* Títulos de sección rojos */
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color); /* Borde negro */
+    padding-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--white); /* Texto blanco para párrafos */
+}
+
+/* --- Sección de Inicio: Diseño de Dos Columnas --- */
+.home-section {
+    padding: 30px;
+    background-color: var(--primary-color); /* Fondo negro */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-home-panel {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-home-content {
+    flex: 2;
+    min-width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.right-home-content h2 {
+    color: var(--secondary-color); /* Título rojo */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color); /* Borde negro */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.right-home-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--white); /* Texto blanco */
+}
+
+.right-home-content img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    margin: 25px auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BARRA DE PROGRESO VERTICAL --- */
+.vertical-progress-container {
+    width: 1cm; /* Ancho de la barra */
+    height: 5cm; /* Altura de la barra */
+    background-color: #555; /* Color del fondo de la barra vacía (gris oscuro) */
+    border-radius: 5px;
+    overflow: hidden; /* Para que el llenado se recorte */
+    margin: 20px auto;
+    position: relative;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    display: flex; /* Añadido para centrar el contenido */
+    align-items: flex-end; /* Alinea los ítems al final (abajo) */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.vertical-progress-fill {
+    position: absolute; /* Sigue siendo absoluto para cubrir el fondo */
+    bottom: 0; /* Empieza desde abajo */
+    left: 0;
+    width: 100%;
+    height: 0%; /* Altura inicial del llenado */
+    background-color: var(--secondary-color); /* Color de llenado (rojo) */
+    transition: height 0.5s ease-out; /* Transición suave de la altura */
+    border-radius: 5px;
+}
+
+.progress-text {
+    position: absolute; /* Se mantiene absoluto para posicionarlo libremente */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centrado exacto */
+    color: var(--white); /* Texto del porcentaje BLANCO para contraste */
+    font-size: 0.8em; /* Tamaño de fuente ligeramente más pequeño para caber en 1cm */
+    font-weight: bold;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    z-index: 10; /* Asegura que esté por encima de la barra de llenado */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8); /* Sombra para mejor legibilidad */
+}
+
+
+/* Botón de compra (horizontal) */
+.buy-tickets-button {
+    background-color: var(--secondary-color); /* Botón rojo */
+    color: var(--white);
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.4em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    width: auto;
+    min-width: 280px;
+}
+
+.buy-tickets-button:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-3px);
+}
+
+.buy-tickets-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.advertencia-sorteo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--white); /* Texto blanco */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.call-to-action-list {
+    margin-top: 25px;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    color: var(--white); /* Texto blanco */
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.call-to-action-list li {
+    margin-bottom: 8px;
+}
+
+/* Sección de Premios */
+.prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.prize-item {
+    background-color: var(--dark-background); /* Fondo oscuro para los ítems de premio */
+    border: 1px solid var(--primary-color); /* Borde negro */
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    color: var(--white); /* Texto blanco */
+}
+
+.prize-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.prize-item img,
+.prize-item video {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prize-item h3 {
+    color: var(--secondary-color); /* Títulos de premio rojos */
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.prize-item p {
+    font-size: 0.95em;
+    color: var(--white); /* Texto blanco */
+}
+
+/* Secciones de Información General (Cómo Participar, Contactos, FAQ) */
+.info-section ol,
+.info-section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: var(--white); /* Texto blanco */
+}
+
+.info-section ol li,
+.info-section ul li {
+    margin-bottom: 10px;
+    color: var(--white); /* Texto blanco */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: var(--white); /* Texto blanco */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--primary-color); /* Borde negro */
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    width: 100%;
+    background-color: var(--white); /* Fondo del input blanco para contraste */
+    color: var(--text-color-light-bg); /* Texto del input negro */
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-button {
+    background-color: var(--secondary-color); /* Botón rojo */
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+}
+
+.faq-item {
+    background-color: var(--dark-background); /* Fondo oscuro para FAQ item */
+    border-left: 5px solid var(--secondary-color); /* Borde rojo */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+}
+
+.faq-item h3 {
+    color: var(--secondary-color); /* Títulos FAQ rojos */
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.faq-item p {
+    font-size: 0.9em;
+    color: var(--white); /* Texto blanco */
+}
+
+/* Pie de Página */
+footer {
+    width: calc(100% - 250px); /* Ajusta el ancho para el sidebar */
+    margin-left: 250px; /* Alinea con el contenido principal */
+    background-color: var(--primary-color); /* Fondo negro */
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color); /* Rojo al pasar el ratón */
+}
+
+/* --- Media Queries para Responsividad --- */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    .home-main-content {
+        gap: 20px;
+    }
+
+    .left-home-panel, .right-home-content {
+        min-width: unset;
+    }
+
+    .right-home-content h2 {
+        font-size: 2em;
+    }
+
+    .prizes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    footer {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar .logo h1 {
+        font-size: 1.8em;
+        color: var(--secondary-color) !important; /* Rojo en móvil para contraste */
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+
+    .sidebar .main-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar .main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .sidebar .main-nav ul li a {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 20px;
+        margin-right: 20px;
+        padding: 20px;
+    }
+
+    .home-main-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-home-panel, .right-home-content {
+        flex: none;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .prizes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .prize-item img,
+    .prize-item video {
+        height: 180px;
+    }
+
+    .prize-item h3 {
+        font-size: 1.2em;
+    }
+
+    footer {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px 0;
+    }
+}
